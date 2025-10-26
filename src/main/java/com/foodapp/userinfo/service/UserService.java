@@ -15,12 +15,14 @@ import java.util.stream.Collectors;
 
 @Service
 public class UserService {
+
+    private final UserRepo userRepo;
+
+    private final UserMapper userMapper;
+
     @Autowired
-    private UserRepo userRepo;
-
-    private UserMapper userMapper;
-
-    public UserService(UserMapper userMapper) {
+    public UserService(UserRepo userRepo, UserMapper userMapper) {
+        this.userRepo = userRepo;
         this.userMapper = userMapper;
     }
 

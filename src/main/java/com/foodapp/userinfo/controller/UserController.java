@@ -17,7 +17,7 @@ public class UserController {
     UserService userService;
 
     @GetMapping("/allUsers")
-    public ResponseEntity<List<UserDTO>> fetchAllRestaurants(){
+    public ResponseEntity<List<UserDTO>> fetchAllUsers(){
         List<UserDTO> listUsers= userService.findAllUsers();
         return new ResponseEntity<>(listUsers, HttpStatus.OK);
     }
